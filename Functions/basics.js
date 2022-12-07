@@ -1,8 +1,5 @@
 function onePlusAvg(a, b){
-
     return 1 + (a + b)/2 + " \nDone ";
-
-
 }
 
 console.log("One plus avg " + onePlusAvg(1,3));

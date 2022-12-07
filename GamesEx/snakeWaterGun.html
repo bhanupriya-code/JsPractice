@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+ //this is a snake water gun game 
+ //create an array which will be containing s,w,g or S,W,G
+ //depending upon the user choosen char we will decide the winner, gave should run for 3 turns
+//  S > W
+//  W > G
+//  G > S ....... these three will be the rules for choosing the winner
+// const rule = ['s','w','g']
+// function computerChoice(rule)
+// 		{
+// 			return rule[Math.floor(Math.random()*rule.length)];
+// 		}
+
+//         let i = 0
+//         while(i <= 3){
+// let userChoice = prompt("Choose one- s,w,g")
+// if(computerChoice(rule) == userChoice){
+//     alert("Match dismissed")
+// }
+// if(computerChoice(rule) == 's' && (userChoice == 'w'||userChoice == 'g')){
+//     alert("Computer won")
+// }
+// if(computerChoice(rule) == 'w' && userChoice == 'g'){
+//     alert("Computer won")
+// }else{
+//     alert("You won")
+// }
+// if(computerChoice(rule) == 'g' && userChoice == 's'){
+//     alert("Computer won")
+// }else{
+//     alert("You won")
+// }
+// i++;
+//         }
+
+let user = prompt("Enter S,W or G")
+let cpuI = Math.floor(Math.random() * 3)
+let cpu = ["S", "W", "G"][cpuI]
+
+const match = (cpu, user) => {
+    if(cpu === user){
+        return "Tied"
+    }
+    else if(cpu === "S" && user === "W"){
+        return "cpu"
+    }
+    else if(cpu === "S" && user === "G"){
+        return "user"
+    }
+    else if(cpu === "G" && user === "W"){
+        return "user"
+    }
+    else if(cpu === "G" && user === "S"){
+        return "cpu"
+    }
+    else if(cpu === "W" && user === "G"){
+        return "cpu"
+    }
+    else if(cpu === "W" && user === "S"){
+        return "user"
+    }
+}
+let result = match(cpu,user)
+document.write(`CPU: ${cpu} nad User: ${user} <br>The winner is: '  ${result}`)
+</script>
+</html>
